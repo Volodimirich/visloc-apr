@@ -33,7 +33,7 @@ jobs:
         uses: whoan/docker-build-with-cache-action@fix-json-extra-args
         with:
           username: "${{ secrets.DOCKERHUB_USER }}"
-          password: "${{ secrets.DOCKERHUB_TOKEN }}"
+          password: "${{ secrets.DOCKERHUB_PASSWORD }}"
           image_name: "${{ env.IMAGE_ID }}"
           image_tag: "${{ env.IMAGE_TAG }}"
 
