@@ -24,7 +24,7 @@ jobs:
         run: |
           IMAGE_ID=$IMAGE_NAME
           VERSION=${{ github.event.inputs.tag }}
-          if [ -z "$VERSION" ]; then $VERSION="latest"; fi
+          if [ -z "$VERSION" ]; then VERSION="latest"; fi
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
           echo "IMAGE_ID=$IMAGE_ID" >> $GITHUB_ENV
