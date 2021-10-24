@@ -32,8 +32,8 @@ jobs:
       - name: Push image to registry
         uses: whoan/docker-build-with-cache-action@fix-json-extra-args
         with:
-          username: "${{ secrets.DOCKERHUB_USER }}"
-          password: "${{ secrets.DOCKERHUB_PASSWORD }}"
+          username: "polevanovairina"
+          password: "lubluvovu"
           image_name: "${{ env.IMAGE_ID }}"
           image_tag: "${{ env.IMAGE_TAG }}"
 
