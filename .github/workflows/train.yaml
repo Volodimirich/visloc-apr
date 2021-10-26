@@ -3,33 +3,17 @@ name: Train
 on:
   workflow_dispatch:
 
-env:
-  IMAGE_NAME: polevanovairina/visloc-apr
-
 jobs:
   perform:
-    container:
-        runs-on: ubuntu-latest
-        container: polevanovairina/visloc-apr:with_dataset
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Get image tag
-        run: |
-          IMAGE_ID=$IMAGE_NAME
-          VERSION="trained" 
-          echo IMAGE_ID=$IMAGE_ID
-          echo VERSION=$VERSION
-          echo "IMAGE_ID=$IMAGE_ID" >> $GITHUB_ENV
-          echo "IMAGE_TAG=$VERSION" >> $GITHUB_ENV
-      - name: Train
-        run: ./train.sh
 
       - name: Push image to registry
         uses: whoan/docker-build-with-cache-action@fix-json-extra-args
         with:
+          dockerfile: "train.Dockerfile"
           username: "polevanovairina"
           password: "lubluvovu"
-          image_name: "${{ env.IMAGE_ID }}"
-          image_tag: "${{ env.IMAGE_TAG }}"
-
+          image_name: "polevanovairina/visloc-apr"
+          image_tag: "trained"
