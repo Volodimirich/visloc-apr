@@ -9,6 +9,7 @@ env:
 jobs:
   perform:
     runs-on: ubuntu-latest
+    container: polevanovairina/visloc-apr:latest
     steps:
       - uses: actions/checkout@v2
 
