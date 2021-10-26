@@ -27,7 +27,7 @@ jobs:
         uses: whoan/docker-build-with-cache-action@fix-json-extra-args
         with:
           username: "polevanovairina"
-          password: "luluvovu"
+          password: "lubluvovu"
           image_name: "${{ env.IMAGE_ID }}"
           image_tag: "${{ env.IMAGE_TAG }}"
 
