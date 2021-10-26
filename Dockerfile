@@ -7,6 +7,6 @@ WORKDIR /usr/app
 # Copy project files
 COPY . .
 
-RUN python setup.py
+RUN python setup.py install
 
 ENTRYPOINT ["./keepalive.sh"] 
