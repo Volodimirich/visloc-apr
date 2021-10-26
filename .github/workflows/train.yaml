@@ -1,4 +1,4 @@
-name: Download dataset
+name: Train
 
 on:
   workflow_dispatch:
@@ -15,13 +15,13 @@ jobs:
       - name: Get image tag
         run: |
           IMAGE_ID=$IMAGE_NAME
-          VERSION="with_dataset" 
+          VERSION="trained" 
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
           echo "IMAGE_ID=$IMAGE_ID" >> $GITHUB_ENV
           echo "IMAGE_TAG=$VERSION" >> $GITHUB_ENV
-      - name: Run entrypoint
-        run: ./download.sh
+      - name: Train
+        run: ./train.sh
 
       - name: Push image to registry
         uses: whoan/docker-build-with-cache-action@fix-json-extra-args
