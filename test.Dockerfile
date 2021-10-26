@@ -1,4 +1,4 @@
-FROM polevanovairina/visloc-apr:with_dataset
+FROM polevanovairina/visloc-apr:trained
 
 RUN ./test.sh
 
