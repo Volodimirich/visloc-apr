@@ -8,7 +8,9 @@ env:
 
 jobs:
   perform:
-    runs-on: ubuntu-latest
+    container:
+        runs-on: ubuntu-latest
+        container: polevanovairina/visloc-apr:with_dataset
     steps:
       - uses: actions/checkout@v2
 
