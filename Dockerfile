@@ -7,4 +7,6 @@ WORKDIR /usr/app
 # Copy project files
 COPY . .
 
+RUN python setup.py
+
 ENTRYPOINT ["./keepalive.sh"] 
