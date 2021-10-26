@@ -4,9 +4,9 @@ docstring
 import os
 import time
 from torch.utils import data
-import networks
-import torch
 import numpy as np
+import torch
+import networks
 from utils.common.config_parser import AbsPoseConfig
 from utils.common.visdom_templates import PoseNetVisTmp, OptimSearchVisTmp
 from utils.datasets.abspose import AbsPoseDataset
@@ -114,7 +114,7 @@ def train(net, config, log, train_loader, val_loader=None):
                                                with_homos=True, config=None)
     else:
         visman, tloss_meter, pos_acc_meter, \
-        rot_acc_meter = OptimSearchVisTmp.get_meters(config=None)
+        rot_acc_meter = OptimSearchVisTmp.get_meters(config)
         homo_meters = None
     start_time = time.time()
     print(f'Start training from {config.start_epoch} to {config.epochs}.')

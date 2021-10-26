@@ -2,7 +2,7 @@
 docstring
 """
 
-from visdom_manager import DummyVisManager, DummyVisObj, VisManager
+from utils.common.visdom_manager import DummyVisManager, DummyVisObj, VisManager
 
 
 class OptimSearchVisTmp:

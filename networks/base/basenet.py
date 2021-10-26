@@ -74,10 +74,7 @@ class BaseNet(nn.Module):
         """
         super().__init__()
         self.lr_scheduler = None
-        self.optimizer = torch.optim.SGD(self.parameters(), lr=config.lr_init,
-                                         momentum=config.momentum,
-                                         weight_decay=config.weight_decay,
-                                         nesterov=False)
+
         self.config = config
         self.device = config.device
 
@@ -129,7 +126,10 @@ class BaseNet(nn.Module):
                                               eps=config.epsilon,
                                               weight_decay=config.weight_decay)
         elif config.optim == 'SGD':
-            pass
+            self.optimizer = torch.optim.SGD(self.parameters(), lr=config.lr_init,
+                                             momentum=config.momentum,
+                                             weight_decay=config.weight_decay,
+                                             nesterov=False)
 
         # Initialize optimizer from a state if available
         if config.optimizer_dict and config.training:

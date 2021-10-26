@@ -1,12 +1,8 @@
 #!/bin/bash
-sudo apt install pip
-pip3 install visdom
-pip3 install pytorch
-pip3 install torchvision
-pip3 install visdom
-pip3 install jupyter
-pip3 install matplotlib
-pip3 install transforms3d
 
 mkdir data
-wget -P './data' 'https://www.repository.cam.ac.uk/bitstream/handle/1810/251342/KingsCollege.zip'
+wget - './data' --content-disposition http://140.238.217.97/index.php/s/VfnQ6TanxzBnpcP/download
+unzip ./data/CambridgeLandmarks.zip
+
+
+wget -P './weights' https://vision.in.tum.de/webshare/u/zhouq/visloc-apr/models/googlenet_places.extract.pth

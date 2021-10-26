@@ -3,7 +3,7 @@
 source activate visloc_apr
 
 # Train PoseNet with Beta loss
-python -m abspose -b 75 --train -val 10 --epoch 1000 \
+python3 -m abspose -b 75 --train -val 10 --epoch 1000 \
        --data_root 'data/CambridgeLandmarks' \
        --pose_txt 'dataset_train.txt' --val_pose_txt 'dataset_test.txt' \
        --dataset 'ShopFacade' -rs 256 --crop 224 \
@@ -17,7 +17,7 @@ python -m abspose -b 75 --train -val 10 --epoch 1000 \
 
 
 # Train PoseNet with learn weight loss
-python -m abspose -b 75 --train -val 10 --epoch 1000 \
+python3 -m abspose -b 75 --train -val 10 --epoch 1000 \
        --data_root 'data/CambridgeLandmarks' \
        --pose_txt 'dataset_train.txt' --val_pose_txt 'dataset_test.txt' \
        --dataset 'ShopFacade' -rs 256 --crop 224 \
@@ -28,7 +28,7 @@ python -m abspose -b 75 --train -val 10 --epoch 1000 \
        
 
 # Train PoseLSTM  with learn weight loss
-python -m abspose -b 75 --train -val 10 --epoch 1000 \
+python3 -m abspose -b 75 --train -val 10 --epoch 1000 \
        --data_root 'data/CambridgeLandmarks' \
        --pose_txt 'dataset_train.txt' --val_pose_txt 'dataset_test.txt' \
        --dataset 'ShopFacade' -rs 256 --crop 224 \
@@ -39,7 +39,7 @@ python -m abspose -b 75 --train -val 10 --epoch 1000 \
 
 
 # Test a model
-python -m abspose -b 75 --test \
+python3 -m abspose -b 75 --test \
        --data_root 'data/CambridgeLandmarks' \
        --pose_txt 'dataset_test.txt' \
        --dataset 'ShopFacade' -rs 256 --crop 224 \
